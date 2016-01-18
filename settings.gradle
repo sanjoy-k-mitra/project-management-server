@@ -1,0 +1,5 @@
+include ':spring-security-oauth2-provider'
+project(":spring-security-oauth2-provider").projectDir = new File(settingsDir, "plugins/grails-spring-security-oauth2-provider/spring-security-oauth2-provider")
+include 'webapp'
+
+rootProject.name='project-management'

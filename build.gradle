@@ -1,0 +1,22 @@
+buildscript{
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+}
+
+repositories{
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.grails.org/grails/core" }
+}
+
+task dist(){
+    dependsOn ':webapp:clean'
+    dependsOn ':webapp:war'
+    copy{
+        from 'webapp/build/libs/*.war'
+        into 'dist/'
+    }
+}
